@@ -1,4 +1,5 @@
 ﻿using SeaportWebApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -33,7 +34,9 @@ namespace SeaportWebApplication.Data
                 new Ship { Name = "Benjioro" },
                 new Ship { Name = "Izar" }
             };
+
             ships.ForEach(s => context.Ships.Add(s));
+            context.SaveChanges();                        
         }
     }
 }

@@ -10,8 +10,8 @@ namespace SeaportWebApplication.Models
 
         public DateTime BookedTo { get; set; }
 
-        public Pier BookedPier { get; set; }
+        public virtual Pier BookedPier { get; set; }
 
-        public Ship BookedShip { get; set; }
+        public virtual Ship BookedShip { get; set; }
     }
 }

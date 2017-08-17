@@ -1,4 +1,6 @@
-﻿namespace SeaportWebApplication.Models
+﻿using System.Collections.Generic;
+
+namespace SeaportWebApplication.Models
 {
     public class Pier
     {
@@ -6,6 +8,6 @@
 
         public string Name { get; set; }
 
-        public Ship Ship { get; set; }
+        public ICollection<PierBooking> PierBookings { get; set; }
     }
 }
