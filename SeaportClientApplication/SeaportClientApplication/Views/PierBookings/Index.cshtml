@@ -1,0 +1,49 @@
+﻿@model SeaportClientApplication.Models.PierBookingListModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Neue Buchung", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Pier:
+        </th>
+        <th>
+            Schiff:
+        </th>
+        <th>
+            gebucht von:
+        </th>
+        <th>
+            gebucht bis:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.PierBookings) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookedPier.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookedShip.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookedFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookedTo)
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.Raw(Model.ResponseMessage)
+</p>

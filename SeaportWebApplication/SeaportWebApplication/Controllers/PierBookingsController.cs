@@ -14,9 +14,9 @@ namespace SeaportWebApplication.Controllers
         private SeaportContext db = new SeaportContext();
 
         // GET: api/PierBookings
-        public IQueryable<PierBooking> GetPierBookings()
+        public List<PierBooking> GetPierBookings()
         {
-            return db.PierBookings;
+            return db.PierBookings.ToList();
         }
 
         // POST: api/PierBookings

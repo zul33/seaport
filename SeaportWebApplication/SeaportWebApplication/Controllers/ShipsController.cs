@@ -3,6 +3,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using SeaportWebApplication.Data;
 using SeaportWebApplication.Models;
+using System.Collections.Generic;
 
 namespace SeaportWebApplication.Controllers
 {
@@ -11,9 +12,9 @@ namespace SeaportWebApplication.Controllers
         private SeaportContext db = new SeaportContext();
 
         // GET: api/Ships
-        public IQueryable<Ship> GetShips()
+        public List<Ship> GetShips()
         {
-            return db.Ships;
+            return db.Ships.ToList();
         }
 
         // GET: api/Ships/5
